@@ -72,6 +72,8 @@
     width: 400,
     height: 70,
     backgroundColor: '#134826',
+    borderWidth: 1, 
+    borderColor: '#000000',
     alignItems: 'center',
     justifyContent: 'center',
     position: 'absolute',
