@@ -8,12 +8,15 @@
  */
 
  import React from 'react';
- import {StyleSheet, View} from 'react-native';
+ import {StyleSheet, View, Text} from 'react-native';
 
  const App = () => {
  
    return (
-     <View style={styles.container}>       
+     <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.name}>Levenshtein Algorithm Visualiser</Text>
+        </View>  
      </View>
    );
  };
@@ -27,6 +30,18 @@
     alignItems: 'center',
     justifyContent: 'center',
    },
+   header:{
+    width: 400,
+    height: 70,
+    backgroundColor: '#134826',
+    alignItems: 'center',
+    justifyContent: 'center',
+    transform: [{translateY: -330}]
+   },
+   name:{
+    color: '#FFFFFF',
+    fontSize: 24
+   }
  });
  
  export default App;
