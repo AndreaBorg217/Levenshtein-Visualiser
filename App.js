@@ -8,11 +8,13 @@
  */
 
  import React, {useState} from 'react';
- import {StyleSheet, View, Text, TextInput} from 'react-native';
+ import {StyleSheet, View, Text, TextInput, TouchableOpacity} from 'react-native';
+ import Output from './components/output.js';
 
  const App = () => {
  const [start, setStart] = useState('')
  const [target, setTarget] = useState('')
+ const [showOutput, setOutput] = useState(false)
 
    return (
      <View style={styles.container}>
@@ -45,6 +47,14 @@
           autoCapitalize={false}
         />
       </View>
+
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.name}>Visualise</Text>
+      </TouchableOpacity>
+
+      {showOutput?(
+        <Output/>
+      ): null}
      </View>
    );
  };
@@ -107,8 +117,19 @@
       borderBottomColor: "#134826",
       transform: [{ rotate: "180deg" }],
       margin: -1
+    },
+    button:{
+      width: 200,
+      height: 60, 
+      backgroundColor: '#134826',
+      borderRadius: 30,
+      borderColor: '#000000',
+      borderWidth: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'absolute',
+      transform: [{translateY: 200}]
     }
-
  });
  
  export default App;
