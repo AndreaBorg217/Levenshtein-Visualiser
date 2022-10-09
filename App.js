@@ -36,6 +36,8 @@
     backgroundColor: '#134826',
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 1, 
+    borderColor: '#000000',
     transform: [{translateY: -330}]
    },
    name:{
