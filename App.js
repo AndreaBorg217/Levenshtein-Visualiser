@@ -53,7 +53,7 @@
       </TouchableOpacity>
 
       {showOutput?(
-        <Output/>
+        <Output start={start} target={target}/>
       ): null}
      </View>
    );
