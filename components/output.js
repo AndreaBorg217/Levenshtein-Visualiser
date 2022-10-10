@@ -7,10 +7,19 @@
  * @flow strict-local
  */
 
- import React from 'react';
+ import React, {useState, useEffect} from 'react';
  import {StyleSheet, View, Text} from 'react-native';
+ import {operations, createMatrix} from '../utilities/functions.js'
 
  const Output = ({start, target}) => {
+  const [matrix, setMatrix] = useState()
+  const [operationsGrid, setOperations] = useState()
+  
+  useEffect(() => {
+    setMatrix(createMatrix(start, target))
+    setOperations(operations(start, target))
+  }, [start, target])
+  
    return (
      <View style={styles.container}>
       <Text style={styles.operation}>{start.concat('\t\t')} ⟹ {'\t\t'.concat(target)}</Text>
