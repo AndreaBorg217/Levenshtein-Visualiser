@@ -15,8 +15,8 @@ A matrix is used to calculate the optimum number of operations required to turn 
  
  1.   If the current character in the start string matches that in the target string, then it is copied;
  2.   If the current characterin the start string is not '' & doesn't match that in the target string, then it is swapped with the character in the target string;
- 3.   If the current character in the start string is '' & the start string is longer than the target string, the character in the start string is inserted into the target string;
- 4.   If the current character in the start string is '' & the start string is shorter than the target string, '' is inserted into the target string.
+ 3.   If the current character in the start string is '' & the start string is shorter than the target string, the character in the start string is inserted into the target string;
+ 4.   If the current character in the start string is '' & the start string is longer than the target string, '' is inserted into the target string.
   <br/><br/><br/>
   <p align="center">
 </p>
