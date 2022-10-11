@@ -70,6 +70,9 @@ const matrixColours = (matrix) =>{
             matrix[row][col] = {contents: matrix[row][col], bg: '#FFFFFF', text: '#000000'}
         }
     }
+
+    matrix[0][0] = {contents: '', bg: '#134826', text: '#FFFFFF'}
+
 }
 
 
@@ -113,6 +116,7 @@ export function createMatrix(start, target){
     populateSecondCol(matrix)
     calcOperations(matrix)
     matrixColours(matrix)
-    console.table(matrix)
+    //console.table(matrix)
+    return matrix;
 }
 
