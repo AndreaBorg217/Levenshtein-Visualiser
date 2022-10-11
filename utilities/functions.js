@@ -87,25 +87,25 @@ export function operations(start, target){
     arrayStart.forEach((char, index) => 
         {
             if (char && char == target[index]){
-                arrayStart[index] = {letter: char, bc: '#FFFFFF'}
-                arrayTarget[index] = {letter: char, bc: '#FFFFFF'}
+                arrayStart[index] = {letter: char, bg: '#FFFFFF'}
+                arrayTarget[index] = {letter: char, bg: '#FFFFFF'}
             } //copy
             else if (char && char != target[index]){
-                arrayStart[index] = {letter: char, bc: '#F4D785'}
-                arrayTarget[index] = {letter: char, bc: '#F4D785'}
+                arrayStart[index] = {letter: char, bg: '#F4D785'}
+                arrayTarget[index] = {letter: target[index], bg: '#F4D785'}
             } //swap
             else if (!char && start.length < target.length){
-                arrayStart[index] = {letter: char, bc: '#9CD2B4'}
-                arrayTarget[index] = {letter: target[index], bc: '#9CD2B4'}
+                arrayStart[index] = {letter: char, bg: '#9CD2B4'}
+                arrayTarget[index] = {letter: target[index], bg: '#9CD2B4'}
             } //insert
             else if (!char && start.length > target.length){
-                arrayStart[index] = {letter: char, bc: '#F47B74'}
-                arrayTarget[index] = {letter: '', bc: '#F47B74'}
+                arrayStart[index] = {letter: char, bg: '#F47B74'}
+                arrayTarget[index] = {letter: '', bg: '#F47B74'}
             } //delete
         }
     )
-    
-   return [arrayStart, arrayTarget];
+    console.log [arrayStart, arrayTarget]
+   return [...arrayStart, ...arrayTarget];
 }
 
 export function createMatrix(start, target){

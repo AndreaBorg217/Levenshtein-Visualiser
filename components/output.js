@@ -11,10 +11,11 @@
  import {StyleSheet, View, Text, FlatList} from 'react-native';
  import {operations, createMatrix} from '../utilities/functions.js'
  import Row from './row.js'
+ import Operation from './opCell.js'
 
  const Output = ({start, target}) => {
   const [matrix, setMatrix] = useState()
-  const [operationsGrid, setOperations] = useState()
+  const [operationsGrid, setOperations] = useState(operations(start, target))
   
   useEffect(() => {
     setMatrix(createMatrix(start, target))
@@ -33,6 +34,34 @@
             keyExtractor={(item, index) => index}
           />
       </View>
+
+    
+      
+      <View style={styles.operationCont}>
+        <View style={styles.headers}>
+
+          <View style={styles.insert}>
+            <Text style={styles.header}>Insertion</Text>
+          </View>
+
+          <View style={styles.delete}>
+            <Text style={styles.header}>Deletion</Text>
+          </View>
+
+          <View style={styles.sub}>
+            <Text style={styles.header}>Substitution</Text>
+          </View>
+        
+        </View>
+        <FlatList
+
+          data={operationsGrid}
+          renderItem={({item}) => <Operation letter={item.letter} bg={item.bg} width={340/(operationsGrid.length/2)}/>}
+          keyExtractor={(item, index) => index}
+          numColumns={operationsGrid.length/2}
+        />
+      </View>
+
     </View>
    );
  };
@@ -56,6 +85,44 @@
    matrix:{
     position: 'absolute',
     transform: [{translateY: -80}]
+   },
+   headers:{
+    flexDirection: 'row',
+   },
+   insert:{
+    width: 100,
+    height: 60,
+    backgroundColor: '#9CD2B4',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#000000',
+    borderWidth: 1,
+   },
+   delete:{
+    width: 100,
+    height: 60,
+    backgroundColor: '#F47B74',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#000000',
+    borderWidth: 1,
+   },
+   sub: {
+    width: 140,
+    height: 60,
+    backgroundColor: '#F4D785',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#000000',
+    borderWidth: 1,
+   },
+   header:{
+    color: '#000000',
+    fontSize: 18
+   },
+   operationCont:{
+    position: 'absolute',
+    transform: [{translateY: 220}]
    }
  });
  
