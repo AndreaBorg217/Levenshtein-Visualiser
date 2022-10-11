@@ -24,8 +24,8 @@
    );
  };
  
- const styles = StyleSheet.create({
-  flex: 1
- });
+const styles = StyleSheet.create({
+ flex: 1
+});
  
- export default Row;
+export default Row;
