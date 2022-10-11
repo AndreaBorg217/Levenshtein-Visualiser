@@ -48,12 +48,12 @@
         />
       </View>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={()=>setOutput(true)}>
         <Text style={styles.name}>Visualise</Text>
       </TouchableOpacity>
 
       {showOutput?(
-        <Output/>
+        <Output start={start} target={target}/>
       ): null}
      </View>
    );
