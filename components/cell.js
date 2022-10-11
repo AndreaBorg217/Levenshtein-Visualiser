@@ -10,11 +10,11 @@
  import React from 'react';
  import {StyleSheet, View, Text} from 'react-native';
 
- const Cell = ({contents, bg, text}) => {
+ const Cell = ({contents, bg, text, underline}) => {
   console.log(contents, bg, text);
    return (
      <View style={[styles.container, {backgroundColor: bg}]}>
-        <Text style={[styles.text, {color: text}]}>{contents}</Text>
+        <Text style={[styles.text, {color: text}, {textDecorationLine: underline}]}>{contents}</Text>
      </View>
    );
  };

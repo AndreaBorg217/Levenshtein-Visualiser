@@ -56,23 +56,23 @@ const calcOperations = (matrix) =>{
     }
 }
 
-const matrixColours = (matrix) =>{
+const matrixColours = (matrix, start, target) =>{
     for(let i = 0; i<matrix[0].length; i++){
-        matrix[0][i] = {contents: matrix[0][i], bg: '#134826', text: '#FFFFFF'}
+        matrix[0][i] = {contents: matrix[0][i], bg: '#134826', text: '#FFFFFF', underline: 'none'}
     }
 
     for(let row = 0; row<matrix.length; row++){
-        matrix[row][0] = {contents: matrix[row][0], bg: '#134826', text: '#FFFFFF'}
+        matrix[row][0] = {contents: matrix[row][0], bg: '#134826', text: '#FFFFFF', underline: 'none'}
     }
 
     for(let row = 1; row<matrix.length; row++){
         for(let col = 1; col<matrix[1].length; col++){
-            matrix[row][col] = {contents: matrix[row][col], bg: '#FFFFFF', text: '#000000'}
+            matrix[row][col] = {contents: matrix[row][col], bg: '#FFFFFF', text: '#000000', underline: 'none'}
         }
     }
 
-    matrix[0][0] = {contents: '', bg: '#134826', text: '#FFFFFF'}
-
+    matrix[0][0] = {contents: '', bg: '#134826', text: '#FFFFFF', underline: 'none'}
+    matrix[target.length + 1][start.length + 1] = {contents: matrix[target.length-1][start.length-1].contents, bg: '#FFFFFF', text: '#000000', underline: 'underline'}
 }
 
 
@@ -115,7 +115,7 @@ export function createMatrix(start, target){
     populateSecondRow(matrix)
     populateSecondCol(matrix)
     calcOperations(matrix)
-    matrixColours(matrix)
+    matrixColours(matrix, start, target)
     //console.table(matrix)
     return matrix;
 }

@@ -16,7 +16,7 @@
     <View style={styles.row}>
      <FlatList
         data={array}
-        renderItem={({item}) => <Cell contents={item.contents} bg={item.bg} text={item.text}/>}
+        renderItem={({item}) => <Cell contents={item.contents} bg={item.bg} text={item.text} underline={item.underline}/>}
         keyExtractor={(item, index) => index}
         numColumns={array.length}
       />
