@@ -72,13 +72,14 @@ const matrixColours = (matrix, start, target) =>{
     }
 
     matrix[0][0] = {contents: '', bg: '#134826', text: '#FFFFFF', underline: 'none'}
-    matrix[target.length + 1][start.length + 1] = {contents: matrix[target.length-1][start.length-1].contents, bg: '#FFFFFF', text: '#000000', underline: 'underline'}
+    matrix[target.length + 1][start.length + 1] = {contents: matrix[target.length][start.length].contents, bg: '#FFFFFF', text: '#000000', underline: 'underline'}
 }
 
 
 
 export function operations(start, target){
     let longest = Math.max(start.length, target.length)
+    let shortest = Math.min(start.length, target.length)
     let arrayStart = Array.from(start)
     let arrayTarget = Array(longest)
     
@@ -90,7 +91,7 @@ export function operations(start, target){
                 arrayStart[index] = {letter: char, bg: '#FFFFFF'}
                 arrayTarget[index] = {letter: char, bg: '#FFFFFF'}
             } //copy
-            else if (char && char != target[index]){
+            else if (char && target[index] && char != target[index]){
                 arrayStart[index] = {letter: char, bg: '#F4D785'}
                 arrayTarget[index] = {letter: target[index], bg: '#F4D785'}
             } //swap
@@ -98,7 +99,7 @@ export function operations(start, target){
                 arrayStart[index] = {letter: char, bg: '#9CD2B4'}
                 arrayTarget[index] = {letter: target[index], bg: '#9CD2B4'}
             } //insert
-            else if (!char && start.length > target.length){
+            else if (char && start.length > target.length){
                 arrayStart[index] = {letter: char, bg: '#F47B74'}
                 arrayTarget[index] = {letter: '', bg: '#F47B74'}
             } //delete

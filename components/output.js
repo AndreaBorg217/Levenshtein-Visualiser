@@ -14,8 +14,8 @@
  import Operation from './opCell.js'
 
  const Output = ({start, target}) => {
-  const [matrix, setMatrix] = useState(createMatrix(start, target))
-  const [operationsGrid, setOperations] = useState(operations(start, target))
+  const [matrix, setMatrix] = useState(createMatrix(start.toLowerCase(), target.toLowerCase()))
+  const [operationsGrid, setOperations] = useState(operations(start.toLowerCase(), target.toLowerCase()))
   
    return (
      <View style={styles.container}>

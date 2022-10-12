@@ -15,13 +15,14 @@
  const [start, setStart] = useState('')
  const [target, setTarget] = useState('')
  const [showOutput, setOutput] = useState(false)
+ 
 
    return (
      <View style={styles.container}>
 
-        <View style={styles.header}>
+        <TouchableOpacity style={styles.header} onPress={() => setOutput(false)}>
           <Text style={styles.name}>Levenshtein Algorithm Visualiser</Text>
-        </View>  
+        </TouchableOpacity>  
 
       <View style={styles.inputCont}>
         <TextInput
@@ -48,7 +49,7 @@
         />
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={()=>setOutput(true)}>
+      <TouchableOpacity style={styles.button} onPress={()=> {if(start && target)setOutput(true)}}>
         <Text style={styles.name}>Visualise</Text>
       </TouchableOpacity>
 
