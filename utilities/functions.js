@@ -79,7 +79,6 @@ const matrixColours = (matrix, start, target) =>{
 
 export function operations(start, target){
     let longest = Math.max(start.length, target.length)
-    let shortest = Math.min(start.length, target.length)
     let arrayStart = Array.from(start)
     let arrayTarget = Array(longest)
     
