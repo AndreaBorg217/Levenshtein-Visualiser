@@ -2,7 +2,7 @@
 
 <h3>An app which takes 2 strings as an input & shows the optimum number of operations & which operations are required to turn 1 string into the other.<h3>
 
-[The algorithm is explained in: Explanation.ipynb](https://github.com/user/repo/blob/branch/other_file.md)
+[The algorithm is explained in: Explanation.ipynb](https://github.com/AndreaBorg217/Levenshtein_Visualiser/blob/main/Explanation.ipynb)
 
 <p align="center">
  <img src="Screenshots\Screenshot_1665572367.png" width="250" >
