@@ -1,4 +1,4 @@
-# Levenshtein_Visualiser
+# Levenshtein Visualiser
 
 <h3>An app which takes 2 strings as an input & shows the optimum number of operations & which operations are required to turn 1 string into the other.<h3>
 
